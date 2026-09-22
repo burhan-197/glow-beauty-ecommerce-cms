@@ -66,7 +66,7 @@ The **Full Edition** adds:
 
 ### Get the Full Version
 
-**[Buy Glow Beauty CMS Full Edition](https://burhan197.lemonsqueezy.com/checkout/buy/78e2ea6c-6da8-49c3-85b9-cf70021c6e1d)**
+**[Buy Glow Beauty CMS Full Edition](https://whop.com/burhan-builds/reusable-beauty-store-cms-for-devs-agencies/)**
 
 ## Quick Start
 
