@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title><%= title %> — Glow Beauty Admin</title>
+  <link rel="stylesheet" href="/css/lite.css">
+</head>
+<body class="admin-body">
+<header class="admin-topbar">
+  <a class="brand" href="/admin">GLOW ADMIN</a>
+  <button class="nav-toggle" type="button" aria-label="Toggle admin navigation" data-nav-toggle>☰</button>
+  <nav class="admin-nav" data-nav>
+    <a href="/admin">Dashboard</a>
+    <a href="/admin/products">Products</a>
+    <a href="/admin/categories">Categories</a>
+    <a href="/admin/orders">Orders</a>
+    <a href="/" target="_blank" rel="noopener">View Store</a>
+    <form action="/admin/logout" method="post"><button class="link-button" type="submit">Logout</button></form>
+  </nav>
+</header>
+<main class="admin-main">

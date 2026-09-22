@@ -1,0 +1,22 @@
+Glow Beauty CMS Lite License
+Version 1.0 — 2026
+
+Copyright (c) 2026. All rights reserved except as granted below.
+
+Permission is granted, free of charge, to download, use, copy, and modify this
+Lite edition for personal projects, learning, portfolio work, and websites built
+for yourself or clients.
+
+You may publish your own finished websites created with this Lite edition.
+
+You may not sell, sublicense, redistribute, or repackage this source code (or a
+substantially similar modified copy) as a competing CMS, template, theme,
+starter kit, boilerplate, or downloadable source-code product.
+
+This license applies only to the Glow Beauty CMS Lite files in this repository.
+The separate paid/full edition is not covered by this license. Third-party
+packages remain subject to their own licenses.
+
+This software is provided "as is", without warranty of any kind. You are
+responsible for testing, deployment security, backups, privacy compliance, and
+any production use.

@@ -1,0 +1,26 @@
+<%- include('../partials/store-header') %>
+<section class="hero">
+  <div>
+    <p class="eyebrow">BEAUTY, SIMPLIFIED</p>
+    <h1>A clean storefront for everyday beauty.</h1>
+    <p>Discover carefully presented products with a fast, simple shopping experience.</p>
+    <a class="button" href="/products">Shop products</a>
+  </div>
+</section>
+<section class="section shell">
+  <div class="section-heading"><div><p class="eyebrow">LATEST</p><h2>New in store</h2></div><a href="/products">View all</a></div>
+  <% if (!products.length) { %><div class="empty-state">No products have been added yet.</div><% } %>
+  <div class="product-grid">
+    <% products.forEach(product => { %>
+      <article class="product-card">
+        <a href="/products/<%= product.slug %>"><img src="<%= product.image %>" alt="<%= product.name %>" loading="lazy"></a>
+        <div class="product-card-body">
+          <span class="muted"><%= product.category?.name || 'Beauty' %></span>
+          <h3><a href="/products/<%= product.slug %>"><%= product.name %></a></h3>
+          <div class="product-card-row"><strong><%= money(product.price) %></strong><span class="stock <%= product.stock > 0 ? '' : 'out' %>"><%= product.stock > 0 ? `${product.stock} in stock` : 'Out of stock' %></span></div>
+        </div>
+      </article>
+    <% }) %>
+  </div>
+</section>
+<%- include('../partials/store-footer') %>

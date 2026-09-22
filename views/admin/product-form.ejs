@@ -1,0 +1,9 @@
+<%- include('../partials/admin-header') %>
+<div class="admin-heading"><div><p class="eyebrow">PRODUCT</p><h1><%= product?._id ? 'Edit product' : 'Add product' %></h1></div><a href="/admin/products">Back to products</a></div>
+<form class="panel admin-form" method="post" enctype="multipart/form-data" action="<%= product?._id ? `/admin/products/${product._id}` : '/admin/products' %>">
+  <% if (error) { %><div class="alert"><%= error %></div><% } %>
+  <div class="form-grid"><label class="full">Product name<input name="name" value="<%= product?.name || '' %>" required maxlength="160"></label><label>Price (PKR)<input type="number" name="price" value="<%= product?.price ?? '' %>" min="0" step="0.01" required></label><label>Stock quantity<input type="number" name="stock" value="<%= product?.stock ?? 0 %>" min="0" step="1" required></label><label>Category<select name="category" required><option value="">Select category</option><% categories.forEach(category => { %><option value="<%= category._id %>" <%= String(product?.category?._id || product?.category || '') === String(category._id) ? 'selected' : '' %>><%= category.name %></option><% }) %></select></label><label>Product image<input type="file" name="image" accept="image/jpeg,image/png,image/webp"></label><label class="full">Description<textarea name="description" rows="7" maxlength="5000"><%= product?.description || '' %></textarea></label><label class="checkbox full"><input type="checkbox" name="isActive" <%= product ? (product.isActive ? 'checked' : '') : 'checked' %>> Visible on storefront</label></div>
+  <% if (product?.image) { %><div class="image-preview"><img src="<%= product.image %>" alt="Current product image"><span>Current image</span></div><% } %>
+  <button class="button" type="submit">Save product</button>
+</form>
+<%- include('../partials/admin-footer') %>

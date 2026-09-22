@@ -1,0 +1,16 @@
+<%- include('../partials/store-header') %>
+<section class="shell product-detail">
+  <div class="product-image"><img src="<%= product.image %>" alt="<%= product.name %>"></div>
+  <div class="product-info">
+    <a class="muted" href="/products?category=<%= encodeURIComponent(product.category?.slug || '') %>"><%= product.category?.name || '' %></a>
+    <h1><%= product.name %></h1>
+    <p class="price"><%= money(product.price) %></p>
+    <p class="description"><%= product.description %></p>
+    <p class="stock <%= product.stock > 0 ? '' : 'out' %>"><%= product.stock > 0 ? `${product.stock} available` : 'Out of stock' %></p>
+    <% if (product.stock > 0) { %>
+      <div class="add-row"><label>Qty<input type="number" min="1" max="<%= Math.min(product.stock, 99) %>" value="1" data-product-qty></label><button class="button" type="button" data-add-to-cart data-product-id="<%= product._id %>" data-product-name="<%= product.name %>" data-product-price="<%= product.price %>" data-product-image="<%= product.image %>" data-product-stock="<%= product.stock %>">Add to cart</button></div>
+      <p class="inline-message" data-cart-message></p>
+    <% } %>
+  </div>
+</section>
+<%- include('../partials/store-footer') %>

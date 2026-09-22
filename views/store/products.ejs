@@ -1,0 +1,24 @@
+<%- include('../partials/store-header') %>
+<section class="page-hero shell"><p class="eyebrow">SHOP</p><h1>All Products</h1><p>Browse the complete collection.</p></section>
+<section class="shell shop-layout">
+  <aside class="filters">
+    <form method="get" action="/products">
+      <label>Search<input type="search" name="q" value="<%= q %>" placeholder="Search products"></label>
+      <label>Category<select name="category"><option value="">All categories</option><% navCategories.forEach(category => { %><option value="<%= category.slug %>" <%= selectedCategory?.slug === category.slug ? 'selected' : '' %>><%= category.name %></option><% }) %></select></label>
+      <button class="button" type="submit">Apply</button>
+    </form>
+  </aside>
+  <div>
+    <div class="results-bar"><strong><%= products.length %> product<%= products.length === 1 ? '' : 's' %></strong></div>
+    <% if (!products.length) { %><div class="empty-state">No products match your search.</div><% } %>
+    <div class="product-grid">
+      <% products.forEach(product => { %>
+        <article class="product-card">
+          <a href="/products/<%= product.slug %>"><img src="<%= product.image %>" alt="<%= product.name %>" loading="lazy"></a>
+          <div class="product-card-body"><span class="muted"><%= product.category?.name || '' %></span><h3><a href="/products/<%= product.slug %>"><%= product.name %></a></h3><div class="product-card-row"><strong><%= money(product.price) %></strong><span class="stock <%= product.stock > 0 ? '' : 'out' %>"><%= product.stock > 0 ? `${product.stock} in stock` : 'Out of stock' %></span></div></div>
+        </article>
+      <% }) %>
+    </div>
+  </div>
+</section>
+<%- include('../partials/store-footer') %>

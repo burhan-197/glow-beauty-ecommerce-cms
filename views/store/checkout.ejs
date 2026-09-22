@@ -1,0 +1,20 @@
+<%- include('../partials/store-header') %>
+<section class="page-hero shell"><p class="eyebrow">GUEST CHECKOUT</p><h1>Checkout</h1></section>
+<section class="shell checkout-layout">
+  <form class="panel checkout-form" action="/checkout" method="post" data-checkout-form>
+    <% if (error) { %><div class="alert"><%= error %></div><% } %>
+    <input type="hidden" name="cart" value="" data-cart-input>
+    <div class="form-grid">
+      <label>Full name<input name="customerName" required maxlength="120"></label>
+      <label>Phone<input name="phone" required maxlength="40"></label>
+      <label>Email <span class="muted">(optional)</span><input type="email" name="email" maxlength="254"></label>
+      <label>City<input name="city" required maxlength="120"></label>
+      <label class="full">Address<textarea name="address" required maxlength="500" rows="3"></textarea></label>
+      <label class="full">Order notes <span class="muted">(optional)</span><textarea name="notes" maxlength="1000" rows="3"></textarea></label>
+    </div>
+    <fieldset><legend>Payment method</legend><label class="radio"><input type="radio" name="paymentMethod" value="cod" checked> Cash on delivery</label><label class="radio"><input type="radio" name="paymentMethod" value="manual"> Manual payment arrangement</label></fieldset>
+    <button class="button wide" type="submit" data-place-order>Place order</button>
+  </form>
+  <aside class="panel"><h2>Order summary</h2><div data-checkout-items></div><div class="summary-row"><span>Total</span><strong data-checkout-total>PKR 0</strong></div></aside>
+</section>
+<%- include('../partials/store-footer') %>
