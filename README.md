@@ -1,46 +1,107 @@
-# Glow Beauty CMS Lite
+# Glow Beauty Ecommerce CMS Lite
 
-A free, deliberately simplified ecommerce CMS starter built with Node.js, Express, EJS and MongoDB.
+A free, reusable **Node.js ecommerce CMS starter** for beauty, skincare and cosmetic stores.
 
-## Included in Lite
+Built with **Node.js, Express, EJS and MongoDB**.
 
-- Basic admin setup/login
-- Product add, edit and delete
+## Screenshots
+
+### Storefront
+![Glow Beauty Storefront](screenshots/storefront.png)
+
+### Products
+![Glow Beauty Products](screenshots/products.png)
+
+### Product Details
+![Glow Beauty Product Details](screenshots/product-detail.png)
+
+### Mobile Storefront
+![Glow Beauty Mobile Storefront](screenshots/mobile-storefront.png)
+
+### Mobile Cart
+![Glow Beauty Mobile Cart](screenshots/cart-mobile.png)
+
+## Features
+
+- Admin login and setup
+- Product add/edit/delete
 - Categories
-- One local product image
-- Basic price and stock inventory
+- Product image uploads
+- Basic stock management
 - Responsive storefront
-- Product search/category filtering
-- Browser cart
+- Product search and filtering
+- Shopping cart
 - Guest checkout
-- Cash on delivery or manual payment order placement
-- Admin order list/detail
-- Basic order status updates
-- Stock reduction on order and restoration on cancellation
-- Automatic basic page titles/meta descriptions
+- Cash on Delivery / manual orders
+- Order management
+- Order status updates
+- Automatic stock handling
+- Basic SEO meta tags
 
-## Not included
+## Tech Stack
 
-The Lite edition intentionally does **not** contain the premium CMS code for advanced theme customization, homepage building, customer accounts, Stripe/PayPal, coupons, bundles/routines, blog CMS, CSV tools, backup/restore, Cloudinary, SMTP/email, Google login, advanced SEO controls, advanced variants/inventory, analytics, or extra CMS settings.
+**Node.js · Express.js · MongoDB · Mongoose · EJS · HTML · CSS · JavaScript**
 
-If you publish this repository as the free edition, add your Gumroad/Lemon Squeezy full-version link here and in the repository description.
+## Lite vs Full Version
 
-## Quick start
+Glow Lite includes the essential ecommerce workflow.
 
-1. Install Node.js and MongoDB.
-2. Copy `.env.example` to `.env`.
-3. Set `SESSION_SECRET` to a long random value.
-4. Run `npm install`.
-5. Run `npm start`.
-6. Open `http://localhost:3000/admin/setup` once to create the administrator.
-7. Create at least one category, then add products.
+The **Full Edition** adds:
 
-For an internet-facing deployment, set `NODE_ENV=production`, use a hosted MongoDB database, use HTTPS, and set `ADMIN_SETUP_TOKEN` before first setup.
+- Theme customization
+- Homepage builder
+- Customer accounts
+- Stripe & PayPal
+- Coupons
+- Bundles & routines
+- Blog CMS
+- Advanced variants & inventory
+- Cloudinary
+- Email/SMTP
+- CSV import/export
+- Backup & restore
+- Advanced SEO
+- Analytics
+- Additional CMS controls
 
-## Product images
+### Get the Full Version
 
-Lite uses local uploads in `public/uploads`. JPG, PNG and WebP are accepted, one image per product, maximum 5 MB. Cloudinary is intentionally not included.
+**[Buy Glow Beauty CMS Full Edition](https://burhan197.lemonsqueezy.com/checkout/buy/78e2ea6c-6da8-49c3-85b9-cf70021c6e1d)**
+
+## Quick Start
+
+```bash
+git clone https://github.com/burhan-197/glow-beauty-ecommerce-cms.git
+cd glow-beauty-ecommerce-cms
+npm install
+npm start
+```
+
+Copy `.env.example` to `.env`, configure MongoDB and `SESSION_SECRET`, then open:
+
+```text
+http://localhost:3000/admin/setup
+```
+
+Create the administrator, add a category and start adding products.
+
+## Product Images
+
+Lite uses local uploads in:
+
+```text
+public/uploads
+```
+
+Supported: **JPG, PNG, WebP**  
+Maximum size: **5 MB**
 
 ## Checkout
 
-There are no customer accounts in Lite. Checkout is guest-only. Product prices and stock are re-checked on the server before an order is created.
+Glow Lite uses **guest checkout** with Cash on Delivery / manual order placement.
+
+No customer account is required.
+
+---
+
+If you find Glow Lite useful, consider giving the repository a **⭐ star**.
